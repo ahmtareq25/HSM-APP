@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "d0a5f643-58c9-4f87-b49d-2bc9e4321464",
+		"name": "User group, Role and Pages",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10355215"
+	},
+	"item": [
+		{
+			"name": "User group and Role Association",
+			"item": [
+				{
+					"name": "User Groups List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://popingame-api.test/base/user-group/list",
+							"protocol": "http",
+							"host": [
+								"popingame-api",
+								"test"
+							],
+							"path": [
+								"base",
+								"user-group",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Group Roles List",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://popingame-api.test/base/user-group-roles/1/list",
+							"protocol": "http",
+							"host": [
+								"popingame-api",
+								"test"
+							],
+							"path": [
+								"base",
+								"user-group-roles",
+								"1",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Group Roles Update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usergroup_id\" : \"1\",\r\n    \"selected_roles\" : [1,2,3]\r\n}"
+						},
+						"url": {
+							"raw": "http://popingame-api.test/base/user-group-roles/1/update",
+							"protocol": "http",
+							"host": [
+								"popingame-api",
+								"test"
+							],
+							"path": [
+								"base",
+								"user-group-roles",
+								"1",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Role &  Page Association",
+			"item": [
+				{
+					"name": "Role Pages List",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://popingame-api.test/base/role-pages/1/list",
+							"protocol": "http",
+							"host": [
+								"popingame-api",
+								"test"
+							],
+							"path": [
+								"base",
+								"role-pages",
+								"1",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Role Pages Update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"selected_page_ids\" : [1,3],\r\n    \"role_id\" : \"2\"\r\n}"
+						},
+						"url": {
+							"raw": "http://popingame-api.test/base/role-pages/update",
+							"protocol": "http",
+							"host": [
+								"popingame-api",
+								"test"
+							],
+							"path": [
+								"base",
+								"role-pages",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

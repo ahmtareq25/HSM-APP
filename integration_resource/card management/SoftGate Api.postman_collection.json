@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "2f08ff2a-0e37-41a4-937e-d3b653e5f55f",
+		"name": "SoftGate Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5100479"
+	},
+	"item": [
+
+		{
+			"name": "Card Management",
+			"item": [
+				{
+					"name": "Send HSM Command",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}"
+						},
+						"url": {
+							"raw": "{{hsm_base_url}}/hsm/test",
+							"host": [
+								"{{hsm_base_url}}"
+							],
+							"path": [
+								"hsm",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generate Card Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "clientid",
+								"value": "asdasdasdasd",
+								"type": "text"
+							},
+							{
+								"key": "clientsecret",
+								"value": "asdasdasdasdasd",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"client_id\":\"ac1e1d06c1eb175cf1b49f085c440469\",\r\n    \"client_secret\":\"1d179a6cb2820221bb34ffe02a01412a\",\r\n    \"pan\" : \"544078672369602\", \r\n    \"expiry\" : \"10/23\", \r\n    \"cvv\" : \"123\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "https://softgate.softrobotics.com.tr/api/generate-card-token",
+							"protocol": "https",
+							"host": [
+								"softgate",
+								"softrobotics",
+								"com",
+								"tr"
+							],
+							"path": [
+								"api",
+								"generate-card-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET CARD INFO",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"client_id\":\"ac1e1d06c1eb175cf1b49f085c440469\",\r\n\"client_secret\":\"1d179a6cb2820221bb34ffe02a01412a\",      \r\n\"token\": \"9E25A5C162A31071F70624CCACEC0D8F617D20BDA23B3E42D53DEFDF91E118182E40CBF166A7E6EAE276C373F03D26AA04A06673E59E12F1A597689CD4B152479507B0F1017E58FD14793F1C6E2DF950\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://softgate.softrobotics.com.tr/api/get-card-info",
+							"protocol": "https",
+							"host": [
+								"softgate",
+								"softrobotics",
+								"com",
+								"tr"
+							],
+							"path": [
+								"api",
+								"get-card-info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE CARD",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"client_id\":\"ac1e1d06c1eb175cf1b49f085c440469\",\r\n    \"client_secret\":\"1d179a6cb2820221bb34ffe02a01412a\",\r\n    \"token\": \"9E25A5C162A31071F70624CCACEC0D8F617D20BDA23B3E42D53DEFDF91E118182E40CBF166A7E6EAE276C373F03D26AA04A06673E59E12F1A597689CD4B152479507B0F1017E58FD14793F1C6E2DF950\",\r\n    \"pan\" : \"544078672369602\", \r\n    \"expiry\" : \"10/23\", \r\n    \"cvv\" : \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://softgate.softrobotics.com.tr/api/update-card-info",
+							"protocol": "https",
+							"host": [
+								"softgate",
+								"softrobotics",
+								"com",
+								"tr"
+							],
+							"path": [
+								"api",
+								"update-card-info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE CARD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"client_id\":\"ac1e1d06c1eb175cf1b49f085c440469\",\r\n    \"client_secret\":\"1d179a6cb2820221bb34ffe02a01412a\",\r\n    \"token\": \"9E25A5C162A31071F70624CCACEC0D8F617D20BDA23B3E42D53DEFDF91E118182E40CBF166A7E6EAE276C373F03D26AA04A06673E59E12F1A597689CD4B152479507B0F1017E58FD14793F1C6E2DF950\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://softgate.softrobotics.com.tr/api/delete-card-info",
+							"protocol": "https",
+							"host": [
+								"softgate",
+								"softrobotics",
+								"com",
+								"tr"
+							],
+							"path": [
+								"api",
+								"delete-card-info"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "base_url",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "client_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "refresh_token",
+			"value": ""
+		},
+		{
+			"key": "role_id",
+			"value": ""
+		},
+		{
+			"key": "hsm_base_url",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "589436b5-f662-4045-9a3d-fc27fec3be0d",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17844080"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-ID",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"dummy@user.com\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify OTP",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-ID",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\" : 3,\n    \"otp\": 201776\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/verify-otp",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"verify-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Renew Auth Token By Refresh Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-ID",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"refresh_token\" : \"def502005d0a4fdcf554284e09e60c4710b4c79a157287f0d63f28d1255a81925c14b10e68520d365ac82fe6b48561a6dd61e8415b63d62588f9a17d112ce3f7e3232eac6b5a2f428e6fbefc5739334958bcea6a38602429b8f3b1036f8b4ece3782720abe86815fee9f644913481f07a40290e13210d02a4e4febb634945a7b9e72be9d180c3b3bc563e48ad4439d4a3b395df5500152f5f737854c7562b0c43da045b3499630042e4e433776da05632d6485554fa968d8b28a8acc3124bbe3039786c70277729d5cf67173038363ff1e666d7eb74b50bb99af04890b74c90b22593938891cefe6fb53d64cec0bc7d53b1d3919c6d619f94398c4b6b15eaf99c90b4aa6853801dde3fae12ed4f708bca687290e66b73bef21f85e6e020a7f1c6b52004a04129faa14039fcf173fb7ee4785a1a42cd5970b6fa12cd092b4cf91f7274075fa70809f1d01a161185a64e3a824b6e332926ee49ea50608c36d1783eed0031f2307451bfefb6f3ddc44c2f28df8f499075806e5183f8ca1bc479a2f7dc299ef\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/renew-auth-token",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"renew-auth-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resend OTP",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-ID",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\" : 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/resend-otp",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"resend-otp"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

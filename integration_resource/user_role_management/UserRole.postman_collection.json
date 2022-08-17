@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "c00fc507-ee46-4db7-bd96-9f0203cc166e",
+		"name": "UserRole",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17686222"
+	},
+	"item": [
+		{
+			"name": "User_Role",
+			"item": [
+				{
+					"name": "user_group_management",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{poping_game}}/api/user-group/",
+							"host": [
+								"{{poping_game}}"
+							],
+							"path": [
+								"api",
+								"user-group",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user_group_create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"company_id\": 1,\r\n    \"name\" : \"galib\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{poping_game}}/api/user-group/create",
+							"host": [
+								"{{poping_game}}"
+							],
+							"path": [
+								"api",
+								"user-group",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user_group_update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"company_id\": 1,\r\n    \"name\" : \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{poping_game}}/api/user-group/1/update",
+							"host": [
+								"{{poping_game}}"
+							],
+							"path": [
+								"api",
+								"user-group",
+								"1",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user_group_delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{poping_game}}/api/user-group/1/delete",
+							"host": [
+								"{{poping_game}}"
+							],
+							"path": [
+								"api",
+								"user-group",
+								"1",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user_group_show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{poping_game}}/api/user-group/2/show",
+							"host": [
+								"{{poping_game}}"
+							],
+							"path": [
+								"api",
+								"user-group",
+								"2",
+								"show"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

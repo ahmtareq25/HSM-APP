@@ -1,0 +1,277 @@
+{
+	"info": {
+		"_postman_id": "50adeb79-8510-42b0-a7de-831c7ca9e32e",
+		"name": "Pop In Game APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17844080"
+	},
+	"item": [
+		{
+			"name": "Role Managemnt",
+			"item": [
+				{
+					"name": "Get Roles",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/roles",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"roles"
+							],
+							"query": [
+								{
+									"key": "company_id",
+									"value": "1",
+									"description": "reference",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "role name",
+									"description": "string",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "1",
+									"description": "0 or 1",
+									"disabled": true
+								},
+								{
+									"key": "order_by",
+									"value": "id",
+									"description": "Column",
+									"disabled": true
+								},
+								{
+									"key": "order_by_direction",
+									"value": "ASC",
+									"description": "ASC / DESC",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"description": "integer",
+									"disabled": true
+								},
+								{
+									"key": "item_per_page",
+									"value": "100",
+									"description": "integer from 1 to 100",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Role",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response_data = JSON.parse(responseBody)",
+									"if (response_data.status_code === 100) {",
+									"    pm.collectionVariables.set(\"role_id\", response_data.data.id);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"company_id\": 1,\n    \"title\": \"Demo Role Working\",\n    \"status\": true\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/roles/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"roles",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Role Update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"company_id\": 1,\n    \"title\": \"Demo Role\",\n    \"status\": true\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/roles/{{role_id}}/update",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"roles",
+								"{{role_id}}",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Role",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set('role_id', '0')"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/roles/{{role_id}}/delete",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"roles",
+								"{{role_id}}",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "role_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "user_id",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
